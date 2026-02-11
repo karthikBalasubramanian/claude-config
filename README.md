@@ -1,6 +1,6 @@
 #  Claude Code Configuration
 
-> **Production-ready Claude Code configuration** with Adobe-specific security skills, enterprise workflows, and intelligent project detection.
+> **Production-ready Claude Code configuration** with  enterprise workflows, and intelligent project detection.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
