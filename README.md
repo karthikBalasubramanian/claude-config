@@ -1,4 +1,4 @@
-# Decision Sciences Claude Code Configuration
+#  Claude Code Configuration
 
 > **Production-ready Claude Code configuration** with Adobe-specific security skills, enterprise workflows, and intelligent project detection.
 
@@ -10,7 +10,6 @@
 
 A complete, battle-tested Claude Code setup that gives your team:
 
-- ✅ **48 Adobe Security Skills** - Embedded security knowledge for AWS, Azure, GCP, Python, Java, Node.js, etc.
 - ✅ **27 Specialized Agents** - Expert AI workers for security, architecture, documentation, testing
 - ✅ **19 Workflow Commands** - Slash commands for EPCC, TDD, security scans, code reviews
 - ✅ **Automated Quality Gates** - Pre-commit hooks for linting, security scanning, formatting
@@ -51,7 +50,7 @@ User Command: /security-scan src/auth.py
          ▼
 ┌──────────────────┐
 │     SKILLS       │  Knowledge libraries (ALWAYS loaded)
-│ adobe-security-* │  • Domain expertise
+│ security-*       │  • Domain expertise
 │                  │  • Best practices
 │                  │  • Code patterns
 │                  │  • Anti-patterns
@@ -174,18 +173,6 @@ setup-claude-config
 
 ## 📊 What's Included
 
-### Skills (48 files)
-```
-.claude/skills/
-├── adobe-security-foundations/    # Core security principles
-│   ├── INJECTION_PREVENTION.md
-│   ├── ERROR_HANDLING.md
-│   └── OUTPUT_ENCODING.md
-├── adobe-security-services/       # API, auth, data protection
-├── adobe-security-lang/           # Python, Java, Node.js, Rust, etc.
-├── adobe-security-cloud/          # AWS, Azure, GCP patterns
-└── adobe-security-audit/          # Snyk, vulnerability management
-```
 
 ### Agents (27 specialists)
 - **Architecture**: @architect, @system-designer, @architecture-documenter
@@ -220,7 +207,6 @@ setup-claude-config
 # 2. Design architecture
 /architecture-design "FastAPI microservice with PostgreSQL, Redis cache, deployed on Ethos"
 # Agents: @architect designs system
-# Skills: adobe-security-cloud (AWS patterns)
 # Output: Architecture diagram, component breakdown
 
 # 3. Implement with security
@@ -229,20 +215,16 @@ setup-claude-config
 # Plan: Creates implementation strategy
 # Code:
 #   - @security-reviewer validates design
-#   - Uses adobe-security-services (auth patterns)
-#   - Uses adobe-security-lang/python (secure coding)
 # Commit: Generates semantic commit message
 
 # 4. Generate tests
 /generate-tests src/api/auth.py --unit --integration
 # Agents: @test-generator creates comprehensive tests
-# Skills: adobe-security-foundations (security test cases)
 # Output: 90%+ test coverage
 
 # 5. Security audit
 /security-scan --deep --focus:authentication
 # Agents: @security-reviewer @qa-engineer
-# Skills: ALL adobe-security-* skills
 # Output: Detailed vulnerability report with fixes
 
 # 6. Document
@@ -253,44 +235,8 @@ setup-claude-config
 # 7. Review before merge
 /code-review src/
 # Agents: @architect @security-reviewer @qa-engineer
-# Skills: adobe-security-* + best practices
 # Output: Comprehensive review with actionable feedback
-```
 
-### What Skills Were Used Automatically?
-
-```
-┌─────────────────────────────────────────────────────┐
-│ Skills Applied Throughout Workflow                  │
-├─────────────────────────────────────────────────────┤
-│ ✓ adobe-security-foundations                        │
-│   - Input validation for auth endpoints             │
-│   - Secure error handling                           │
-│   - Output encoding for JWT                         │
-│                                                      │
-│ ✓ adobe-security-services                           │
-│   - API security patterns                           │
-│   - Authentication best practices                   │
-│   - JWT token management                            │
-│                                                      │
-│ ✓ adobe-security-lang/python                        │
-│   - FastAPI security patterns                       │
-│   - Async/await security considerations             │
-│   - Pydantic model validation                       │
-│                                                      │
-│ ✓ adobe-security-cloud/aws                          │
-│   - Secrets Manager for credentials                 │
-│   - IAM role-based access                           │
-│   - Security groups configuration                   │
-│                                                      │
-│ ✓ adobe-security-audit                              │
-│   - Dependency vulnerability scanning               │
-│   - Snyk integration                                │
-│   - CVE detection                                   │
-└─────────────────────────────────────────────────────┘
-```
-
----
 
 ## 🛠️ Management Commands
 
@@ -319,7 +265,6 @@ Your Project
 │   ├── agents/     → SYMLINK to global
 │   ├── commands/   → SYMLINK to global
 │   ├── hooks/      → SYMLINK to global
-│   ├── skills/     → SYMLINK to global
 │   └── plans/      → SYMLINK to global
 ```
 
@@ -344,7 +289,6 @@ Your Project
 
 ## 🤝 Contributing
 
-This is an Adobe internal configuration. To add company-specific patterns:
 
 1. **Add Skills**: Create new skills in `.claude/skills/` directory with your team-specific patterns
 2. **Add Commands**: Create new commands in `.claude/commands/` directory for custom workflows
@@ -364,14 +308,12 @@ This repository is inspired by and builds upon:
 
 - **Original Inspiration**: [AWS Anthropic Advanced Claude Code Patterns](https://github.com/aws-samples/anthropic-on-aws/tree/main/advanced-claude-code-patterns)
 
-- **Adobe Security Skills**: The AI Secure Coding team is converting [adobe-cursor-rules](https://github.com/oneAdobe/adobe-cursor-rules) to AgentSkills following industry standards defined at [agentskills.io](https://agentskills.io/home). In the meantime, this repository includes skills from the experimental PR: [security-pass-aide-cursor-rules-experiment #24](https://github.com/OneAdobe/security-pass-aide-cursor-rules-experiment/pull/24)
 
 ---
 
 ## 🆘 Support
 
 - **Issues**: Open an issue in this repo
-- **Questions**: Ask in #aep-decision-sciences Slack channel
 
 ---
 
